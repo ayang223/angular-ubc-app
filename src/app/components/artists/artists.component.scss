@@ -1,0 +1,50 @@
+.artist-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.artist-item {
+  width: calc(33% - 20px);
+  margin: 10px;
+}
+
+.image {
+  width: 100%;
+}
+
+.name-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  display: flex;
+  p {
+    font-size: medium;
+  }
+}
+
+.spotify-icon-container {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+  .artist-item {
+    width: calc(50% - 20px);
+    margin: 10px;
+  }
+  .name {
+    p {
+      font-size: small;
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+  .artist-item {
+    width: calc(100% - 20px);
+    margin: 10px;
+  }
+}

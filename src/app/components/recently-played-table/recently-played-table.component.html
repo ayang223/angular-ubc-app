@@ -1,0 +1,31 @@
+<div class="table-container">
+  <div class="table-container-div">
+    <div class="grid-container">
+      <div class="grid-colum-span-4 font-bold">Track</div>
+      <div class="grid-colum-span-4 font-bold">Artist(s)</div>
+      <div class="grid-colum-span-2 font-bold">Played At</div>
+    </div>
+    <ng-container *ngIf="recentlyPlayed">
+      <div
+        *ngFor="let item of recentlyPlayed; let index = index"
+        class="grid-container2"
+        (click)="openOnSpotify(item.track.external_urls.spotify)"
+      >
+        <div class="grid-colum-span-4">
+          <div>{{ item.track.name }}</div>
+        </div>
+        <div class="name-container grid-colum-span-4">
+          <p *ngFor="let artist of item.track.artists; let lastIndex = last">
+            {{ artist.name }}
+            <ng-container *ngIf="!lastIndex">,&nbsp;</ng-container>
+          </p>
+        </div>
+        <div class="grid-colum-span-2">
+          <div class="date-container">
+            <p>{{ getDate(item.played_at) }}</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

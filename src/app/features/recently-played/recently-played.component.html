@@ -1,0 +1,16 @@
+<ng-container
+  *ngIf="
+    {
+      recentlyPlayed: recentlyPlayed$ | async
+    } as data;
+    else loading
+  "
+>
+  <app-recently-played-table [recentlyPlayed]="data.recentlyPlayed"></app-recently-played-table>
+</ng-container>
+
+<ng-template #loading>
+  <div class="spinner-container">
+    <mat-spinner [strokeWidth]="3"></mat-spinner>
+  </div>
+</ng-template>

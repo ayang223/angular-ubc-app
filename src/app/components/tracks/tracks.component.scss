@@ -1,0 +1,41 @@
+.track-container {
+  display: flex;
+  flex: auto;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name-container {
+  display: flex;
+  flex: 3;
+  align-items: center;
+}
+
+.image {
+  width: 4rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.artist-container {
+  display: flex;
+  flex: 3;
+  align-items: center;
+}
+
+.spotify-icon-container {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+  .image {
+    width: 2.75rem;
+  }
+
+  p {
+    font-size: smaller;
+  }
+}

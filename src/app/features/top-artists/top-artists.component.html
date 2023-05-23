@@ -1,0 +1,27 @@
+<div class="content-container">
+  <ng-container
+    *ngIf="{
+        shortTermTopArtists: shortTermTopArtists$ | async,
+        mediumTermTopArtists: mediumTermTopArtists$ | async,
+        longTermTopArtists: longTermTopArtists$ | async,
+      } as data; else loading"
+  >
+    <mat-tab-group>
+      <mat-tab label="last 4 weeks">
+        <app-artists [artists]="data.shortTermTopArtists"></app-artists>
+      </mat-tab>
+      <mat-tab label="last 6 months">
+        <app-artists [artists]="data.mediumTermTopArtists"></app-artists>
+      </mat-tab>
+      <mat-tab label="all time">
+        <app-artists [artists]="data.longTermTopArtists"></app-artists>
+      </mat-tab>
+    </mat-tab-group>
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="spinner-container">
+      <mat-spinner [strokeWidth]="3"></mat-spinner>
+    </div>
+  </ng-template>
+</div>

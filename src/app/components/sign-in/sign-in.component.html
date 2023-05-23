@@ -1,0 +1,8 @@
+<div class="signin__container">
+  <button mat-raised-button color="primary" (click)="onSignInPress()">
+    <ng-container *ngIf="!isLoading">Sign In</ng-container>
+    <ng-container *ngIf="isLoading"
+      ><mat-spinner [strokeWidth]="3" [color]="'accent'" diameter="20"></mat-spinner
+    ></ng-container>
+  </button>
+</div>
